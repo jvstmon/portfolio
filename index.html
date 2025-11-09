@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Krizerowo – Małe kroki, duże zmiany</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Lato:wght@300;400&family=Dancing+Script&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Pasek nawigacyjny -->
+  <nav>
+    <div class="logo">Monika Kriger</div>
+    <ul>
+      <li><a href="#about">O mnie</a></li>
+      <li><a href="#projects">Projekty</a></li>
+      <li><a href="#contact">Kontakt</a></li>
+    </ul>
+  </nav>
+
+<!-- Sekcja startowa z wideo w tle -->
+<section id="hero">
+  <video autoplay muted loop playsinline class="background-video">
+    <source src="video/kroki.mp4" type="video/mp4">
+    <!-- Możesz użyć też innego pliku, np. walking.mp4 -->
+    Twój przeglądarka nie obsługuje wideo.
+  </video>
+
+  <div class="hero-content">
+    <h1>Małe kroki, duże zmiany.</h1>
+    <p>Bo rozwój to długi proces.</p>
+  </div>
+</section>
+
+
+<section id="about" class="fade-in about-section light-bg">
+  <h2>O mnie</h2>
+  <div class="about-grid">
+
+    <!-- JA ZAWODOWO -->
+    <div class="about-column">
+      <h3>Ja zawodowo</h3>
+      <p>Tu wstawisz opis tego, co Cię napędza zawodowo – Twoje podejście do pracy, pasję do rozwoju, automatyzacji i tego, co robisz w Microsoft 365.</p>
+      <div class="photo-slider" id="slider-work">
+        <img src="img/work1.jpg" alt="Monika w pracy" class="slide active">
+        <video src="img/work2.mov" class="slide" muted autoplay loop playsinline></video>
+        <img src="img/work3.jpg" alt="Tablica projektowa" class="slide">
+      </div>
+    </div>
+
+    <!-- JA DLA PRZYJEMNOŚCI -->
+    <div class="about-column">
+      <h3>Ja dla przyjemności</h3>
+      <p>Tu możesz napisać o tym, co lubisz robić po pracy — że jesteś duszą towarzystwa, lubisz animacje, naturę i zwierzęta (zwłaszcza swoje kotki 🐾).</p>
+      <div class="photo-slider" id="slider-fun">
+        <img src="img/fun1.jpg" alt="Animacje" class="slide active">
+        <video src="img/fun2.mov" class="slide" muted autoplay loop playsinline></video>
+        <video src="img/fun3.mov" class="slide" muted autoplay loop playsinline></video>
+        <img src="img/fun4.jpg" alt="Kotki" class="slide">
+      </div>
+    </div>
+
+    <!-- JA NA SPORTOWO -->
+    <div class="about-column">
+      <h3>Ja na sportowo</h3>
+      <p>Opis Twojej energii i zamiłowania do ruchu — biegi, pole dance, smocze łodzie – pokazuje determinację i siłę 💪</p>
+      <div class="photo-slider" id="slider-sport">
+        <video src="img/sport1.mov" class="slide active" muted autoplay loop playsinline></video>
+        <video src="img/sport2.mov" class="slide" muted autoplay loop playsinline></video>
+        <video src="img/sport3.mov" class="slide" muted autoplay loop playsinline></video>
+        <video src="img/sport4.mov" class="slide" muted autoplay loop playsinline></video>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+  <!-- Sekcja Projekty -->
+  <section id="projects" class="fade-in">
+    <h2>Projekty</h2>
+    <div class="carousel">
+      <div class="project">
+        <img src="img/project1.jpg" alt="Projekt Power BI">
+        <h3>Dashboard Power BI</h3>
+        <p>Interaktywny raport miesięczny z integracją danych z Excela i SharePointa.</p>
+      </div>
+
+      <div class="project">
+        <img src="img/project2.jpg" alt="Projekt Power Automate">
+        <h3>Automatyzacja Power Automate</h3>
+        <p>Proces automatycznej wysyłki powiadomień z formularzy do Teams.</p>
+      </div>
+
+      <div class="project">
+        <img src="img/project3.jpg" alt="Strona Krizerowo">
+        <h3>Strona krizerowo.pl</h3>
+        <p>Moja pierwsza strona w HTML i CSS – osobiste miejsce rozwoju.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sekcja Kontakt -->
+  <section id="contact" class="fade-in">
+    <h2>Kontakt</h2>
+    <p>Jeśli chcesz się ze mną skontaktować, zapraszam na mój profil:</p>
+    <a href="https://www.linkedin.com/in/mkriger" target="_blank" class="linkedin-btn">Odwiedź mój LinkedIn</a>
+  </section>
+
+  <!-- Stopka -->
+  <footer>
+    © 2025 Krizerowo – „Małe kroki, duże zmiany.”
+  </footer>
+
+  <!-- Skrypt przewijania -->
+  <script>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+  </script>
+
+<!-- Przycisk powrotu do góry -->
+<button id="scrollToTopBtn" title="Wróć na górę">↑</button>
+
+<script src="script.js"></script>
+
+
+</body>
+</html>

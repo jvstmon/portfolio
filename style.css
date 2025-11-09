@@ -1,0 +1,300 @@
+/* Kolory i ogólny styl */
+:root {
+  --dark-green: #1E3D34;
+  --light-green: #4A6B58;
+  --beige: #E6E2D3;
+  --white: #F9F9F7;
+}
+
+body {
+  margin: 0;
+  font-family: 'Lato', sans-serif;
+  background-color: var(--dark-green);
+  color: var(--beige);
+  scroll-behavior: smooth;
+}
+
+/* Pasek nawigacyjny */
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: rgba(30, 61, 52, 0.95);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8em 8%;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  z-index: 10;
+}
+
+nav .logo {
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.8em;
+  color: var(--beige);
+}
+
+/* Odnośniki przesunięte bliżej środka */
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2.5em;
+  margin: 0;
+  padding-right: 14%;
+}
+
+nav a {
+  color: var(--beige);
+  text-decoration: none;
+  font-weight: 300;
+  transition: color 0.3s;
+  font-size: 1em;
+}
+
+nav a:hover {
+  color: var(--light-green);
+}
+
+/* Sekcja startowa z filmem w tle */
+#hero {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+.background-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(40%) contrast(110%);
+  z-index: 0;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  color: var(--beige);
+}
+
+.hero-content h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 4em;
+  margin-bottom: 0.2em;
+}
+
+.hero-content p {
+  font-size: 1.5em;
+  color: var(--light-green);
+}
+
+
+/* Sekcja o mnie */
+.about-section {
+  background-color: #f5f5f0;
+  color: #1e1e1e;
+  text-align: center;
+  padding: 5em 10%;
+}
+
+.about-section h2 {
+  font-size: 2.2em;
+  margin-bottom: 1.5em;
+  color: #163a2f;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 3em;
+}
+
+.about-column h3 {
+  margin-bottom: 0.8em;
+  color: #2c5a48;
+}
+
+.about-column p {
+  text-align: justify;
+  line-height: 1.7em;
+  margin-bottom: 1em;
+}
+
+/* Karuzele zdjęć */
+.photo-slider {
+  position: relative;
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.photo-slider img,
+.photo-slider video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1s ease;
+  border-radius: 15px;
+}
+
+.photo-slider .active {
+  opacity: 1;
+}
+
+
+/* Nagłówek wyśrodkowany */
+#about h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.2em;
+  margin-bottom: 1.2em;
+  text-align: center;
+}
+
+/* Tekst justowany */
+#about p {
+  text-align: justify;
+  line-height: 1.7;
+  font-size: 1.05em;
+  margin-bottom: 1.2em;
+}
+
+.about-photos-centered {
+  margin-top: 3em;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.5em;
+}
+
+.about-photos-centered img {
+  width: 250px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
+}
+
+.about-photos-centered img:hover {
+  transform: scale(1.03);
+}
+
+
+/* Projekty */
+#projects {
+  padding: 6em 10%;
+  text-align: center;
+}
+
+#projects h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2em;
+  margin-bottom: 1.5em;
+}
+
+.carousel {
+  display: flex;
+  gap: 2em;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.project {
+  background-color: rgba(255,255,255,0.05);
+  padding: 1.5em;
+  border-radius: 10px;
+  max-width: 280px;
+}
+
+.project img {
+  width: 100%;
+  border-radius: 6px;
+  margin-bottom: 0.8em;
+}
+
+/* Kontakt */
+#contact {
+  background-color: var(--beige);
+  color: var(--dark-green);
+  padding: 6em 10%;
+  text-align: center;
+}
+
+.linkedin-btn {
+  background-color: var(--light-green);
+  color: var(--white);
+  padding: 0.8em 1.5em;
+  border-radius: 4px;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 1em;
+  transition: background-color 0.3s;
+}
+
+.linkedin-btn:hover {
+  background-color: var(--dark-green);
+  color: var(--beige);
+}
+
+/* Stopka */
+footer {
+  text-align: center;
+  padding: 2em 0;
+  font-size: 0.9em;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  color: var(--light-green);
+}
+
+/* Przycisk "Do góry" */
+#scrollToTopBtn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 100;
+  background-color: var(--dark-green);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 1.5em;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+#scrollToTopBtn:hover {
+  background-color: #1e4d3b; /* trochę jaśniejszy odcień zieleni */
+  transform: scale(1.1);
+}
+
+/* Pokazanie przycisku po przewinięciu */
+#scrollToTopBtn.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* --- Efekt fade-in przy przewijaniu --- */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
