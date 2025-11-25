@@ -33,20 +33,36 @@ function handleScrollFade() {
 window.addEventListener('scroll', handleScrollFade);
 window.addEventListener('load', handleScrollFade);
 
-// --- Automatyczne zmienianie zdjęć w sekcji "O mnie" ---
-function initSliders() {
-  const sliders = document.querySelectorAll('.photo-slider');
-
-  sliders.forEach(slider => {
-    const images = slider.querySelectorAll('img');
-    let index = 0;
-
-    setInterval(() => {
-      images[index].classList.remove('active');
-      index = (index + 1) % images.length;
-      images[index].classList.add('active');
-    }, 4000); // zmiana co 4 sekundy
+// --- Automatyczne zmienianie zdjęć w sekcji "O mnie" --- 
+document.addEventListener("DOMContentLoaded", () => { 
+  const sliders = document.querySelectorAll(".photo-slider"); 
+  
+  sliders.forEach(slider => { const slides = slider.querySelectorAll(".slide"); 
+    let index = 0; 
+    
+    // pokaż pierwszy slajd 
+    slides.forEach(s => s.classList.remove("active")); 
+    slides[0].classList.add("active"); 
+    
+    // przełączanie slajdów 
+    setInterval(() => { 
+      slides[index].classList.remove("active"); 
+      
+      // Jeśli slajd jest filmem — zatrzymaj 
+      if (slides[index].tagName === "VIDEO") { 
+        slides[index].pause(); 
+        slides[index].currentTime = 0; 
+      } 
+      
+      index = (index + 1) % slides.length; 
+      
+      slides[index].classList.add("active"); 
+      
+      // Jeśli nowy slajd to film — odtwórz 
+      if (slides[index].tagName === "VIDEO") { 
+        slides[index].play().catch(() => {}); 
+      } 
+    
+    }, 4000); // czas przełączeń 
+    }); 
   });
-}
-
-window.addEventListener('load', initSliders);
