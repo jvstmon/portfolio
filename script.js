@@ -66,3 +66,56 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 4000); // czas przełączeń 
     }); 
   });
+
+  // --- PAGE LOADER --
+
+window.addEventListener(
+  "load", () => { 
+    const loader = document.getElementById("page-loader"); 
+    const progressBar = document.querySelector(".progress"); 
+    
+    requestAnimationFrame(() => { 
+      progressBar.style.width = "100%"; 
+    }); 
+    
+    setTimeout(() => { 
+      loader.classList.add("hidden"); 
+      document.body.classList.add("loaded"); 
+    }, 1300); });
+
+ // --- SLIDER --
+gsap.registerPlugin(ScrollTrigger);
+
+// -----------------------------
+// SETUP (Your provided snippet logic)
+// -----------------------------
+const scrollerEl = document.querySelector("#main-scroll-container"); // Assuming Locomotive wrapper exists
+let scrollerForST;
+
+if (scrollerEl) {
+  scrollerForST = scrollerEl;
+
+  ScrollTrigger.scrollerProxy(scrollerEl, {
+    scrollTop(value) {
+      if (arguments.length) {
+        scrollerEl.scrollTop = value;
+      }
+      return scrollerEl.scrollTop;
+    },
+    getBoundingClientRect() {
+      return {
+        top: 0,
+        left: 0,
+        width: window.innerWidth,
+        height: window.innerHeight,
+      };
+    },
+    pinType: "transform",
+  });
+
+  scrollerEl.addEventListener("scroll", () => ScrollTrigger.update());
+  ScrollTrigger.addEventListener("refresh", () => ScrollTrigger.update());
+} else {
+  // Fallback for native scrolling (standard CodePen behavior)
+  scrollerForST = window;
+}

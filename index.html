@@ -9,9 +9,17 @@
 </head>
 <body>
 
-  <!-- Pasek nawigacyjny -->
+  <div id="page-loader">
+  <div class="loader-content">
+    <div class="progress-bar">
+      <div class="progress"></div>
+    </div>
+  </div>
+</div>
+
+
   <nav>
-    <div class="logo">Monika Kriger</div>
+    <a href="#hero" class="logo">Monika Kriger</a>
     <ul>
       <li><a href="#about">O mnie</a></li>
       <li><a href="#projects">Projekty</a></li>
@@ -19,12 +27,11 @@
     </ul>
   </nav>
 
-<!-- Sekcja startowa z wideo w tle -->
+
 <section id="hero">
   <video autoplay muted loop playsinline class="background-video">
     <source src="video/kroki.mp4" type="video/mp4">
-    <!-- Możesz użyć też innego pliku, np. walking.mp4 -->
-    Twój przeglądarka nie obsługuje wideo.
+    Twoja przeglądarka nie obsługuje wideo.
   </video>
 
   <div class="hero-content">
@@ -34,11 +41,12 @@
 </section>
 
 
-<section id="about" class="fade-in about-section light-bg">
+<section id="about" class="about-section light-bg">
+  <div class="section-content fade-in">
+
   <h2>O mnie</h2>
   <div class="about-grid">
 
-    <!-- JA ZAWODOWO -->
     <div class="about-column">
       <h3>Ja zawodowo</h3>
       <p>Kierują mną dwie proste zasady: <b>lepiej zapobiegać niż leczyć </b> oraz <b>wszystko jest do zrobienia</b>. Ciągle się uczę, chętnie sięgam po nowe narzędzia i lubię zamieniać „nie da się” w „zrobione”. </p>
@@ -52,7 +60,7 @@
       </div>
     </div>
 
-    <!-- JA DLA PRZYJEMNOŚCI -->
+   
     <div class="about-column">
       <h3>Ja dla przyjemności</h3>
       <p>Lubię równowagę: z jednej strony jestem <b>spokojna i uważna</b>, a z drugiej, kiedy sytuacja tego wymaga <b>towarzyska i pełna energii</b>. Najlepiej czuję się tam, gdzie mogę działać i przynosić radość.</p> 
@@ -66,11 +74,11 @@
       </div>
     </div>
 
-    <!-- JA NA SPORTOWO -->
+    
     <div class="about-column">
       <h3>Ja na sportowo</h3>
-      <p>Nie jestem sportowym świrem, ale <b>lubię próbować nowych rzeczy</b> i sprawdzać, gdzie leży mój własny limit. Jeśli coś wydaje się trudne to trzeba na to po prostu poświęcić więcej czasu.</p> 
-      <p>Lubie wybierać aktywności, które dają mi frajdę i różnorodność. Gram w squasha, biegam, ćwiczę pole dance i pływam na smoczych łodziach - każde z tych zajęć uczy mnie czegoś innego i na swój sposób daje mi poczucie siły.</p> 
+      <p>Nie jestem sportowym świrem, ale <b>lubię próbować nowych rzeczy</b> i <b>sprawdzać, gdzie leży mój własny limit.</b> Jeśli coś wydaje się trudne to trzeba na to po prostu poświęcić więcej czasu.</p> 
+      <p>Zazwyczaj wybieram aktywności, które dają mi frajdę, dlatego spróbowałam już wielu dyscyplin: squash, szermierka, boks, pole dance czy smocze łodzie - każde z tych zajęć uczy czegoś innego i na swój sposób dało mi poczucie siły.</p> 
       <p>Żeby rzucić sobie wyzwanie, zapisuję się na biegi i wydarzenia sportowe. A mój cel na 2026 jest prosty i ekscytujący: stanąć na starcie triathlonu w wersji sprint.</p>
       <div class="photo-slider" id="slider-sport">
         <video src="img/sport1.mov" class="slide active" muted autoplay loop playsinline></video>
@@ -83,43 +91,99 @@
   </div>
 </section>
 
-  <!-- Sekcja Projekty -->
-  <section id="projects" class="fade-in">
+<section id="projects">
     <h2>Projekty</h2>
-    <div class="carousel">
-      <div class="project">
-        <img src="img/project1.jpg" alt="Projekt Power BI">
-        <h3>Dashboard Power BI</h3>
-        <p>Interaktywny raport miesięczny z integracją danych z Excela i SharePointa.</p>
+
+    <div class="projects-grid">
+      <div class="project-card">
+         <img src="img/project1.jpg" alt="Dashboard Power BI">
+
+        <div class="project-overlay">
+          <h4>Dashboard w Power BI</h4>
+          <p>Użyte narzędzia: Power BI, Power Query, Excel</p>
+        </div>
       </div>
 
-      <div class="project">
-        <img src="img/project2.jpg" alt="Projekt Power Automate">
-        <h3>Automatyzacja Power Automate</h3>
-        <p>Proces automatycznej wysyłki powiadomień z formularzy do Teams.</p>
+      <div class="project-card">
+        <img src="img/project2.jpg" alt="Dashboard Looker Studio">
+        <div class="project-overlay">
+          <h4>Dashboard w Looker Studio</h4>
+          <p>Użyte narzędzia: Looker studio, Arkusze google</p>
+        </div>
       </div>
 
-      <div class="project">
-        <img src="img/project3.jpg" alt="Strona Krizerowo">
-        <h3>Strona krizerowo.pl</h3>
-        <p>Moja pierwsza strona w HTML i CSS – osobiste miejsce rozwoju.</p>
+      <div class="project-card">
+        <img src="img/project3.jpg" alt="Dashboard Excel">
+        <div class="project-overlay">
+          <h4>Dashboard Excel</h4>
+          <p>Użyte narzędzia: Power Pivot, tabele przestawne</p>
+        </div>
       </div>
-    </div>
-  </section>
 
-  <!-- Sekcja Kontakt -->
-  <section id="contact" class="fade-in">
+
+    
+      <div class="project-card">
+        <img src="img/project4.jpg" alt="VBA - wykroczenia/rajstopy">
+        <div class="project-overlay">
+          <h4>Aplikacja do wyceny zamówień - produkcja rajstop</h4>
+          <p>Użyte narzędzia: Excel (VBA)</p>
+        </div>
+      </div>
+
+      <div class="spacer">
+        Kliknij projekt i przeczytaj więcej na jego temat!
+      </div>
+      
+      <div class="project-card">
+        <img src="img/project5.jpg" alt="Portfolio">
+        <div class="project-overlay">
+          <h4>Moje portfolio - dokładnie ta strona</h4>
+          <p>Użyte narzędzia: HTML, CSS, JavaScript</p>
+        </div>
+      </div>
+    
+
+      <div class="project-card">
+        <img src="img/project6.jpg" alt="Platforma rozwojowa">
+        <div class="project-overlay">
+          <h4>Platforma rozwojowa do obsługi szkoleń pracowników</h4>
+          <p>Użyte narzędzia: Sharepoint, Power Automate, Power Apps, Forms</p>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <img src="img/project7.jpg" alt="Power query - zestawienia">
+        <div class="project-overlay">
+          <h4>Automatyzacja cotygodniowego zestawienia</h4>
+          <p>Użyte narzędzia: Power Query, Tabele przestawne</p>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <img src="img/project8.jpg" alt="A to miejsce na cudo, które stworze dla Ciebie">
+        <div class="project-overlay">
+          <h4>A tutaj będzie cudo, które stworzę dla Ciebie</h4>
+          <p>Użyte narzędzia: to się okaże!</p>
+        </div>
+      </div>
+  </div>
+</section>
+</section>
+
+
+<section id="contact">
+  <div class="section-content fade-in">
     <h2>Kontakt</h2>
     <p>Jeśli chcesz się ze mną skontaktować, zapraszam na mój profil:</p>
     <a href="https://www.linkedin.com/in/mkriger" target="_blank" class="linkedin-btn">Odwiedź mój LinkedIn</a>
   </section>
 
-  <!-- Stopka -->
+
   <footer>
     © 2025 Krizerowo – „Małe kroki, duże zmiany.”
   </footer>
 
-  <!-- Skrypt przewijania -->
+
   <script>
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function(e) {
@@ -131,7 +195,7 @@
     });
   </script>
 
-<!-- Przycisk powrotu do góry -->
+
 <button id="scrollToTopBtn" title="Wróć na górę">↑</button>
 
 <script src="script.js"></script>
